@@ -1,7 +1,9 @@
 import 'package:fitness4all/common/color_extensions.dart';
 import 'package:fitness4all/common_widgets/round_button.dart';
+import 'package:fitness4all/screen/home/Main_home/home_screen.dart';
+import 'package:fitness4all/screen/home/settings/settings_screen.dart';
+import 'package:fitness4all/screen/login/sign_up_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class OnBoardingScreen extends StatefulWidget {
   const OnBoardingScreen({super.key});
@@ -21,19 +23,19 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
       "image": "assets/img/excerise.png"
     },
     {
-      "title": "Logger",
+      "title": "Exercise Logger",
       "subtitle": "log your activities each time !!",
-      "image": "assets/img/ex_3.png"
+      "image": "assets/img/excerise_logger.jpg"
     },
     {
       "title": "Track your progress",
       "subtitle": "Check your progess whenever and wherever",
-      "image": "assets/img/ex_4.png"
+      "image": "assets/img/excerise_tracker.jpg"
     },
     {
       "title": "Get Personalized Suggestions",
       "subtitle": "We monitor your activites to give you the best insights possible",
-      "image": "assets/img/ex_5.png"
+      "image": "assets/img/personalised_suggestions.jpg"
     }
   ];
 
@@ -62,7 +64,9 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                 width: 70,
                 fontWeight: FontWeight.w300,
                 type: RoundButtonType.line,
-                onPressed: () {}),
+                onPressed: () {
+                  context.push( HomeScreen());
+                }),
           )
         ],
       ),
@@ -143,7 +147,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                     onPressed: () {
                       if (selectPage >= 3) {
                         //Next Screen
-
+                          context.push(const SignUpScreen());
                       } else {
                         selectPage = selectPage + 1;
                         controller.animateToPage(
